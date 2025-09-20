@@ -1,0 +1,20 @@
+{
+  "name": "drcheblazar",
+  "version": "1.0.0",
+  "description": "Dr. Chebl Azar - Breast Cancer Awareness Portal",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "breast-cancer",
+    "awareness",
+    "health",
+    "genetic-testing",
+    "oncology"
+  ],
+  "author": "Dr. Chebl Azar",
+  "license": "MIT"
+}
