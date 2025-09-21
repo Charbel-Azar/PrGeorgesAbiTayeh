@@ -723,6 +723,12 @@ a{
     color:#fff
 }
 
+/* WhatsApp button hover effect */
+#waHero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
 /* ===== Sections ===== */
 section{
     padding:2.5rem 1rem
@@ -1441,5 +1447,372 @@ section h2{
     
     .cta-row {
         gap: 0.5rem;
+    }
+}
+
+/* Tab Styles */
+.tabs-container {
+    margin: 2rem 0;
+}
+
+.tabs-header {
+    display: flex;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 16px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    gap: 0.5rem;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1.2rem 2rem;
+    background: transparent;
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    min-height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.tab-button:hover {
+    color: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.tab-button:hover::before {
+    opacity: 0.1;
+}
+
+.tab-button.active {
+    color: white;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-color: #1d4ed8;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-button.active::before {
+    opacity: 1;
+}
+
+.tab-button i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover i {
+    transform: scale(1.1);
+}
+
+.tab-button.active i {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Additional interactive effects */
+.tab-button:active {
+    transform: translateY(0px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.tab-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Tab content animation */
+.tab-content {
+    display: none;
+    animation: tabFadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+    animation: tabSlideIn 0.4s ease-out;
+}
+
+@keyframes tabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tabSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tab container hover effect */
+.tabs-container:hover .tab-button:not(.active) {
+    opacity: 0.8;
+}
+
+.tabs-container:hover .tab-button:not(.active):hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+}
+
+table th {
+    background: #dc2626;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover {
+    background: #f9fafb;
+}
+
+/* Hero Section Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .hero-section .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .hero-section h1 {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+        text-align: center !important;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    .hero-section .quote-card {
+        margin: 1rem 0 !important;
+        padding: 1.5rem !important;
+    }
+    
+    .hero-section .quote-card blockquote {
+        font-size: 1rem !important;
+    }
+    
+    .hero-section .floating-elements {
+        display: none !important;
+    }
+}
+
+/* Mobile Tab Styles */
+@media (max-width: 768px) {
+    .tabs-header {
+        flex-direction: column;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-radius: 16px;
+        padding: 0.75rem;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        gap: 0.75rem;
+    }
+    
+    .tab-button {
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+    
+    .tab-button:hover {
+        background: rgba(59, 130, 246, 0.05);
+        color: #1e40af;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+        border-color: #3b82f6;
+    }
+    
+    .tab-button.active {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+        color: white !important;
+        border-color: #1d4ed8 !important;
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3) !important;
+        transform: translateY(-2px);
+    }
+    
+    .tab-button.active i {
+        color: white !important;
+        transform: scale(1.1);
+    }
+    
+    .tab-content.active {
+        display: block !important;
+    }
+    
+    /* Add subtle click indicator without emoji */
+    .tab-button::after {
+        content: '';
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        transition: all 0.3s ease;
+    }
+    
+    .tab-button:hover::after {
+        background: #3b82f6;
+        transform: translateY(-50%) scale(1.2);
+    }
+    
+    .tab-button.active::after {
+        background: white;
+        transform: translateY(-50%) scale(1.3);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Mobile Table Styles */
+    table {
+        font-size: 0.8rem;
+    }
+    
+    table th,
+    table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* Stack table columns on very small screens */
+@media (max-width: 480px) {
+    table,
+    table thead,
+    table tbody,
+    table th,
+    table td,
+    table tr {
+        display: block;
+    }
+    
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table tr {
+        border: 1px solid #e5e7eb;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background: white;
+    }
+    
+    table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    table td:before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #374151;
     }
 }

@@ -15,308 +15,402 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <a href="#" class="brand-link" aria-label="Dr. Georges Abi Tayeh home">
-        <img src="/assets/images/breastcancer/cheblazar breast clinic.png" alt="Dr. Georges Abi Tayeh Clinic" class="brand-icon" />
-      </a>
-      
-      <!-- Language Selector -->
-      <div class="language-selector">
-        <div class="selected-text">
-          <i class="fa-solid fa-earth-americas"></i>
-        </div>
-        <div class="dropdown">
-          <div class="dropdown-option" onclick="changeLanguage('en')">EN</div>
-          <div class="dropdown-option" onclick="changeLanguage('fr')">FR</div>
-          <div class="dropdown-option" onclick="changeLanguage('ar')">AR</div>
-        </div>
-      </div>
-    </nav>
 
 
     <!-- ===== HERO ===== -->
-    <section class="new-hero" role="banner">
-        <div class="new-hero-container">
-            <div class="new-hero-content">
-                <div class="new-hero-text">
-                    <div class="new-hero-badge">
-                        <i class="fa-solid fa-user-md"></i>
-                        <span>Full Professor & Department Chair</span>
+    <section class="hero-section" role="banner" style="background: linear-gradient(135deg, #fef7f7 0%, #fce7f3 50%, #f8fafc 100%); padding: 4rem 0; position: relative; overflow: hidden;">
+        <!-- Background decorative elements -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; text-align: center;">
+                <!-- Content -->
+                <div style="text-align: center; width: 100%;">
+                    <div style="display: inline-flex; align-items: center; background: rgba(236, 72, 153, 0.1); color: #be185d; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(236, 72, 153, 0.2);">
+                        <i class="fa-solid fa-heart" style="margin-right: 0.5rem;"></i>
+                        Fertility Center
                     </div>
-                    <h1 class="new-hero-title">Dr. Georges Abi Tayeh</h1>
-                    <h2 class="new-hero-subtitle">Breast Health: 3-Step Plan for Preventive Care</h2>
-                    <p class="new-hero-description">Full Professor, Saint Joseph University of Beirut (USJ); Chair, Obstetrics & Reproduction Department, Hôtel-Dieu de France; Co-founder/Chair, Saint Joseph Fertility Center. "Finding breast cancer early is the main goal of our routine breast care. That's why it's so important to follow this plan for preventive care. Finding problems early gives you the best chance of successful treatment."</p>
-                    <div class="new-hero-buttons">
-                        <a href="#" id="waHero" class="new-hero-btn new-hero-btn-whatsapp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Schedule Consultation</span>
-                        </a>
+                    
+                    <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #1f2937; margin-bottom: 1rem; line-height: 1.1;">
+                        Breast Health
+                    </h1>
+                    
+                    <p style="font-size: 1.4rem; color: #6b7280; margin-bottom: 2rem; font-weight: 500; line-height: 1.4;">
+                        Every woman deserves a personalized breast health screening plan
+                    </p>
+                    
+                    <!-- Main Image -->
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; margin-left: 2rem; margin-right: 2rem;">
+                        <div style="position: relative;">
+                            <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); padding: 1rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);">
+                                <img src="/assets/images/breastcancer/cheblazar.png" alt="Dr. Georges Abi Tayeh - Breast Health Specialist" style="width: 100%; max-width: 400px; height: auto; border-radius: 16px; display: block;">
+                            </div>
+                            <!-- Floating elements -->
+                            <div style="position: absolute; top: -20px; right: -20px; background: #10b981; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+                                <i class="fa-solid fa-shield-heart" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div style="position: absolute; bottom: -20px; left: -20px; background: #3b82f6; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">
+                                <i class="fa-solid fa-stethoscope" style="font-size: 1.5rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quote Card -->
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 4px solid #ec4899; margin-bottom: 2rem;">
+                        
+                        <blockquote style="font-size: 1.1rem; line-height: 1.6; color: #374151; margin: 0; font-style: italic; position: relative;">
+                            <i class="fa-solid fa-quote-left" style="color: #ec4899; font-size: 1.5rem; position: absolute; top: -10px; left: -10px;"></i>
+                            <span style="padding-left: 2rem;">"You can lower your breast-cancer risk with healthy habits such as staying active, maintaining a healthy weight, limiting alcohol, and not smoking. Some risks, like age, family history, and genetics, we can't change. That's why screening is essential: it finds cancer early, when treatment is most effective."</span>
+                        </blockquote>
+                        
+                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0; font-weight: 600; color: #be185d; font-size: 1rem;">Dr Georges Abi Tayeh</p>
+                            <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.9rem;">Full Professor, Saint Joseph University of Beirut (USJ); Chair, Obstetrics & Reproduction Department, Hôtel-Dieu de France; Co-founder/Chair, Saint Joseph Fertility Center</p>
                     </div>
                 </div>
-                <div class="new-hero-image">
-                    <img src="/assets/images/breastcancer/cheblazar.png" alt="Dr. Georges Abi Tayeh - Breast Health Specialist" loading="eager">
+                    
+                    <!-- CTA Button -->
+                    <a href="#" id="waHero" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;">
+                        <i class="fa-brands fa-whatsapp" style="margin-right: 0.75rem; font-size: 1.2rem;"></i>
+                        Schedule Consultation
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <main class="container" role="main">
-        <!-- ===== 3-Step Plan for Preventive Care ===== -->
-        <section id="preventive-care" aria-labelledby="preventive-care-title">
-            <h2 id="preventive-care-title">3-Step Plan for Preventive Care</h2>
-            <p class="lead">A comprehensive approach to breast health that focuses on early detection and prevention through systematic screening and awareness.</p>
-            <div class="grid cols-3">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>1. Breast Self-Awareness</h3>
-                    <p>The American Cancer Society says that all women should get to know how their breasts normally look and feel. Doing this can help you notice any changes more easily. Changes to your breasts may include:</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li>Lump</li>
-                        <li>Leaky fluid (discharge) other than breastmilk</li>
-                        <li>Swelling</li>
-                        <li>Skin irritation or dimpling</li>
-                        <li>Nipple problems (pain, redness, flaking, or turning inward)</li>
-                    </ul>
-                    <p style="margin-top: 1rem; font-weight: 600; color: #dc2626;">See your healthcare provider right away if you notice any of these changes.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fa-solid fa-stethoscope"></i>
-                    </div>
-                    <h3>2. Clinical Breast Exam (CBE)</h3>
-                    <p>Your physical exam should include a clinical breast exam (CBE) by a healthcare provider or nurse trained to check breast problems. The American College of Obstetricians and Gynecologists recommends:</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li><strong>Between ages 29 and 39:</strong> Women should have a CBE by a healthcare provider every 1 to 3 years.</li>
-                        <li><strong>After age 40:</strong> Women should have a breast exam by a healthcare provider every year.</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fa-solid fa-x-ray"></i>
-                    </div>
-                    <h3>3. Mammogram</h3>
-                    <p>A mammogram is a low-dose X-ray of your breasts. It's the most common imaging test. A mammogram can find cancer or other problems early, before a lump can be felt. It can also help diagnose other breast problems.</p>
-                    <p style="margin-top: 1rem; font-weight: 600;">The Lebanese Ministry of Public Health recommends mammograms yearly starting from the age of 40.</p>
-                    <p style="margin-top: 1rem;">Talk with your healthcare provider about your own personal risk factors. This will help you decide when to start getting mammograms and how often to have them.</p>
-                    <p style="margin-top: 1rem;">Depending on the level of risk, a breast MRI may also be done along with mammograms.</p>
-                </div>
-            </div>
-        </section>
+    
 
-
-        <section id="awareness-image" aria-labelledby="awareness-image-title">
-            <h2 id="awareness-image-title">Hope. Strength. Love.</h2>
-            <div class="card" style="padding:0; display:flex; justify-content:center; align-items:center;">
-              <!-- Vertical image: constrained width, no cropping -->
-              <img 
-                src="/assets/images/breastcancer/breastcancer3.jpg" 
-                alt="Breast cancer awareness"
-                loading="lazy"
-                style="display:block; width:100%; max-width:520px; height:auto; object-fit:contain; border-radius:12px;" />
-            </div>
-        </section>
-        <!-- ===== Personalized Screening Plan ===== -->
-        <section id="screening" aria-labelledby="screening-title">
-            <h2 id="screening-title">Personalized Screening Plan for Breast Cancer</h2>
-            <p class="lead">The type of screening you have and your screening schedule are based on your personal risk for breast cancer.</p>
-            <div class="grid cols-3">
-                <div class="screening-card">
-                    <div class="age-group">
-                        <h3>Average Risk</h3>
-                        <span class="age-badge" style="background-color: #10b981;">Standard Care</span>
-                    </div>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Starting at age 20, become familiar with how your breasts look and feel. Knowing your breasts will help you notice changes.</li>
-                        <li><i class="fa-solid fa-check"></i> Get a clinical breast exam every year, starting at age 25.</li>
-                        <li><i class="fa-solid fa-check"></i> Starting at age 40, have a mammogram or tomosynthesis (3D mammogram screening) every year.</li>
-                        <li><i class="fa-solid fa-check"></i> If your mammogram shows you have dense breasts, your healthcare provider may recommend more screening tests. These can include an ultrasound.</li>
-                    </ul>
+        <!-- ===== Risk Factors Section ===== -->
+        <section id="risk-factors" aria-labelledby="risk-factors-title">
+            <h2 id="risk-factors-title">Can you lower your risk for breast cancer?</h2>
+            <p class="lead">A risk factor is anything that raises your chances of getting a disease.</p>
+            
+            <!-- Risk Factors Tabs -->
+            <div class="tabs-container" style="margin: 2rem 0;">
+                <div class="tabs-header" role="tablist" aria-label="Risk factors tabs">
+                    <button class="tab-button active" data-tab="non-changeable" role="tab" aria-selected="true" aria-controls="non-changeable" id="tab-non-changeable">
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        Risks You Cannot Change
+                    </button>
+                    <button class="tab-button" data-tab="changeable" role="tab" aria-selected="false" aria-controls="changeable" id="tab-changeable">
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                        Risks You Can Change
+                    </button>
                 </div>
-                <div class="screening-card">
-                    <div class="age-group">
-                        <h3>Intermediate Risk</h3>
-                        <span class="age-badge" style="background-color: #f59e0b;">Enhanced Care</span>
-                    </div>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Starting at age 20, become familiar with how your breasts look and feel. Knowing your breasts will help you notice changes.</li>
-                        <li><i class="fa-solid fa-check"></i> Starting at age 25, get a breast exam by your healthcare provider every 6 months.</li>
-                        <li><i class="fa-solid fa-check"></i> If you have or had atypical hyperplasia (ADH) or lobular neoplasia, start getting screened at age 30. If you were diagnosed at age 30 or older, start getting screened at the time of diagnosis.</li>
-                        <li><i class="fa-solid fa-check"></i> Get a mammogram or tomosynthesis every year.</li>
-                        <li><i class="fa-solid fa-check"></i> Your healthcare provider may recommend more imaging. This can include an ultrasound, contrast mammography, or an MRI, if you have dense breasts.</li>
-                    </ul>
-                </div>
-                <div class="screening-card">
-                    <div class="age-group">
-                        <h3>High Risk</h3>
-                        <span class="age-badge" style="background-color: #ef4444;">Intensive Care</span>
-                    </div>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Starting at age 20, have a breast exam every 6 months.</li>
-                        <li><i class="fa-solid fa-check"></i> Have a mammogram or tomosynthesis every year, but no earlier than age 25. Start no later than 10 years before the youngest age that a close blood relative was diagnosed with cancer.</li>
-                        <li><i class="fa-solid fa-check"></i> Have an MRI every year. Alternate with a mammogram every 6 months.</li>
-                        <li><i class="fa-solid fa-check"></i> If you had radiation treatment, have your MRI, and mammogram or tomosynthesis, at the same time or every 6 months. Screening should start 8 years after radiation treatment.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="guidelines-note">
-                <p><i class="fa-solid fa-info-circle"></i> <strong>Important:</strong> These guidelines are educational and should be personalized based on individual risk factors, family history, and health status. Consult with your healthcare provider for personalized screening recommendations.</p>
-            </div>
-        </section>
-
-<section id="awareness-image" aria-labelledby="awareness-image-title">
-  <h2 id="awareness-image-title">Know Your Normal</h2>
-  <div class="card" style="padding:0; display:flex; justify-content:center; align-items:center;">
-    <!-- Vertical image: constrained width, no cropping -->
-    <img 
-      src="/assets/images/breastcancer/breastcancer2.jpg" 
-      alt="Breast cancer awareness"
-      loading="lazy"
-      style="display:block; width:100%; max-width:520px; height:auto; object-fit:contain; border-radius:12px;" />
-  </div>
-</section>
-        <!-- ===== Lead Capture Form CTA ===== -->
-        <section id="lead-capture" aria-labelledby="lead-capture-title" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 3rem 0; margin: 2rem 0;">
-            <div class="container">
-                <h2 id="lead-capture-title" style="text-align: center; margin-bottom: 1rem;">Talk with Dr. Georges Abi Tayeh</h2>
-                <p class="lead" style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: #64748b;">Share your questions here and get personalized screening plan for breast cancer that saves the most lives</p>
                 
-                <div class="card" style="max-width: 600px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Non-changeable Risks Tab -->
+                <div class="tab-content active" id="non-changeable" role="tabpanel" aria-labelledby="tab-non-changeable">
+                    <div class="card" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #ef4444; padding: 2rem;">
+                        <h3 style="color: #dc2626; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                            <i class="fa-solid fa-exclamation-triangle" style="margin-right: 0.75rem;"></i>
+                            Breast cancer risks you cannot change
+                        </h3>
+                        <div class="grid cols-2" style="gap: 1.5rem;">
+                            <div>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Gender:</strong> Females are much more likely to develop breast cancer than others.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Age:</strong> Breast cancer risk increases with age, with most breast cancers developing after the age of 50.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Genetic mutations:</strong> Inherited gene mutations cause breast cancers. These genetic mutations can be passed on from either parent, to any child.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Family history:</strong> Your risk increases if your mother, sister, father, or child had breast cancer, especially if the diagnosis was before the age of 50.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Menstrual and reproductive health history:</strong> Women who menstruated early (before the age of 12), entered menopause late (after 55), gave birth at an older age, or never gave birth have an increased risk for breast cancer.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <strong style="color: #dc2626;">Dense breast tissue:</strong> Having dense breasts increases your risk and often makes breast masses harder to detect.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Changeable Risks Tab -->
+                <div class="tab-content" id="changeable" role="tabpanel" aria-labelledby="tab-changeable">
+                    <div class="card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #22c55e; padding: 2rem;">
+                        <h3 style="color: #16a34a; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                            <i class="fa-solid fa-heart-pulse" style="margin-right: 0.75rem;"></i>
+                            How to prevent or lower your risk of breast cancer
+                        </h3>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #374151;">Research shows that some healthy habits can lower your risk.</p>
+                        
+                        <h4 style="color: #16a34a; margin-bottom: 1rem;">Lifestyle-related breast cancer risks</h4>
+                        <div class="grid cols-2" style="gap: 1.5rem;">
+                            <div>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Physical inactivity:</strong> Breast cancer risk increases with a sedentary lifestyle.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Being overweight or obese:</strong> An unhealthy weight increases your risk of breast cancer, especially if you are overweight or obese following menopause.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Alcohol consumption:</strong> Drinking alcohol frequently increases your risk of breast cancer.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Childbirth choices:</strong> Your chances of breast cancer increase if you never have biological children, have your first child after the age of 35, or never breastfeed.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Radiation to the chest:</strong> Having radiation therapy to the chest before the age of 30 may increase your risk.
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <strong style="color: #16a34a;">Get regular check-ups:</strong> Regular check-ups with your healthcare provider.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Breast Cancer Screening Section ===== -->
+        <section id="breast-screening" aria-labelledby="breast-screening-title" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 3rem 0; margin: 2rem 0;">
+            <div class="container">
+                <h2 id="breast-screening-title" style="text-align: center; margin-bottom: 1rem; color: #1e40af;">What is breast cancer screening?</h2>
+                <p class="lead" style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: #64748b;">Breast cancer screening means getting regular tests to find breast cancer, even before you have any signs or symptoms. Regular screenings help find cancer early, when it's easier to treat.</p>
+                
+                <div class="card" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #1e40af; margin-bottom: 1.5rem; text-align: center;">Benefits of regular breast cancer screenings include:</h3>
+                    <div class="grid cols-2" style="gap: 1.5rem;">
+                        <div style="display: flex; align-items: center; padding: 1rem; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                            <i class="fa-solid fa-search" style="color: #3b82f6; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <span style="font-weight: 600; color: #1e40af;">Early cancer detection</span>
+            </div>
+                        <div style="display: flex; align-items: center; padding: 1rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #22c55e;">
+                            <i class="fa-solid fa-chart-line" style="color: #22c55e; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <span style="font-weight: 600; color: #16a34a;">Improved prognosis and chance of survival</span>
+                    </div>
+                        <div style="display: flex; align-items: center; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                            <i class="fa-solid fa-shield-heart" style="color: #f59e0b; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <span style="font-weight: 600; color: #d97706;">Less invasive treatment options, often without the need for mastectomy (breast removal)</span>
+                </div>
+                        <div style="display: flex; align-items: center; padding: 1rem; background: #fdf2f8; border-radius: 8px; border-left: 4px solid #ec4899;">
+                            <i class="fa-solid fa-heart" style="color: #ec4899; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <span style="font-weight: 600; color: #be185d;">Comfort and reassurance of a normal result, specifically for those with strong familial risk</span>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Screening Recommendations Section ===== -->
+        <section id="screening-recommendations" aria-labelledby="screening-recommendations-title">
+            <h2 id="screening-recommendations-title">Breast Cancer Screening Recommendations</h2>
+            <p class="lead">It all depends on your level of risk.</p>
+            
+            <!-- Screening Recommendations Tabs -->
+            <div class="tabs-container" style="margin: 2rem 0;">
+                <div class="tabs-header" role="tablist" aria-label="Screening recommendations tabs">
+                    <button class="tab-button active" data-tab="average-risk" role="tab" aria-selected="true" aria-controls="average-risk" id="tab-average-risk">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        Average Risk
+                    </button>
+                    <button class="tab-button" data-tab="high-risk" role="tab" aria-selected="false" aria-controls="high-risk" id="tab-high-risk">
+                        <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>
+                        Higher Risk
+                    </button>
+                </div>
+                
+                <!-- Average Risk Tab -->
+                <div class="tab-content active" id="average-risk" role="tabpanel" aria-labelledby="tab-average-risk">
+                    <div class="card" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #0ea5e9; padding: 2rem;">
+                        <h3 style="color: #0369a1; margin-bottom: 1.5rem;">Breast cancer screening recommendations for women at average risk from NCCN</h3>
+                        
+                        <div class="screening-methods" style="display: grid; gap: 1.5rem;">
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #0ea5e9;">
+                                <h4 style="color: #0369a1; margin-bottom: 1rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-x-ray" style="margin-right: 0.75rem;"></i>
+                                    Mammography
+                                </h4>
+                                <p style="margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Every year starting at age 40</p>
+                                <p style="color: #6b7280; line-height: 1.6;">Mammography uses low-dose X-rays to take pictures of a breast to check for signs of breast cancer. During a screening test you will have a mammogram, which takes images of your breasts. Sometimes to get a closer look at an area, you may need to have an ultrasound or MRI.</p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981;">
+                                <h4 style="color: #059669; margin-bottom: 1rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-stethoscope" style="margin-right: 0.75rem;"></i>
+                                    Clinical Breast Exam
+                                </h4>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                             <div>
-                                <label for="firstName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">First Name</label>
-                                <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                                        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Ages 25-39:</p>
+                                        <p style="color: #6b7280;">Every 1-3 years</p>
                             </div>
                             <div>
-                                <label for="lastName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                                        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Starting at age 40:</p>
+                                        <p style="color: #6b7280;">Every year</p>
+                                    </div>
+                                </div>
+                                <p style="color: #6b7280; line-height: 1.6; margin-top: 1rem;">A clinical breast exam is when a healthcare provider checks your breasts for lumps or other changes. It's a simple and quick exam that helps catch breast cancer early.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- High Risk Tab -->
+                <div class="tab-content" id="high-risk" role="tabpanel" aria-labelledby="tab-high-risk">
+                    <div class="card" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #ef4444; padding: 2rem;">
+                        <h3 style="color: #dc2626; margin-bottom: 1.5rem;">Breast Cancer Screening Recommendations for Women at Higher Risk</h3>
+                        <p style="margin-bottom: 1.5rem; color: #374151; font-size: 1.1rem;">Routine breast cancer screening is important for all women, but even more so for those at higher risk. If you're at higher risk of breast cancer, you may need to be screened earlier and more often than other women.</p>
                         
-                        <div>
-                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Email Address</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid #f59e0b;">
+                            <h4 style="color: #d97706; margin-bottom: 1rem;">You're considered at higher risk of breast cancer if you have:</h4>
+                            <ul style="color: #374151; line-height: 1.6;">
+                                <li>A greater than 20% lifetime risk of invasive breast cancer</li>
+                                <li>One factor that greatly increases risk or several factors that together, greatly increase risk</li>
+                            </ul>
                         </div>
                         
-                        <div>
-                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                        <!-- Screening Guidelines Tables -->
+                        <div style="overflow-x: auto; margin: 2rem 0;">
+                            <h4 style="color: #dc2626; margin-bottom: 1rem;">ACS breast cancer screening guidelines for women at higher risk</h4>
+                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr style="background: #dc2626; color: white;">
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Estimated Risk</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Clinical Breast Exam</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Mammogram</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Breast MRI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e5e7eb;">
+                                        <td data-label="Estimated Risk" style="padding: 1rem; font-weight: 600; color: #374151;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</td>
+                                        <td data-label="Clinical Breast Exam" style="padding: 1rem; color: #6b7280;">Not recommended</td>
+                                        <td data-label="Mammogram" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
+                                        <td data-label="Breast MRI" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         
-                        <div>
-                            <label for="age" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Age</label>
-                            <select id="age" name="age" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
-                                <option value="">Select your age range</option>
-                                <option value="20-29">20-29</option>
-                                <option value="30-39">30-39</option>
-                                <option value="40-49">40-49</option>
-                                <option value="50-59">50-59</option>
-                                <option value="60-69">60-69</option>
-                                <option value="70+">70+</option>
-                            </select>
+                        <div style="overflow-x: auto; margin: 2rem 0;">
+                            <h4 style="color: #dc2626; margin-bottom: 1rem;">NCCN breast cancer screening guidelines for women at higher risk</h4>
+                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr style="background: #dc2626; color: white;">
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Estimated Risk</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Clinical Breast Exam</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Mammogram</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Breast MRI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e5e7eb;">
+                                        <td data-label="Estimated Risk" style="padding: 1rem; font-weight: 600; color: #374151;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</td>
+                                        <td data-label="Clinical Breast Exam" style="padding: 1rem; color: #6b7280;">Not recommended</td>
+                                        <td data-label="Mammogram" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
+                                        <td data-label="Breast MRI" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         
-                        <div>
-                            <label for="riskLevel" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Risk Level</label>
-                            <select id="riskLevel" name="riskLevel" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
-                                <option value="">Select your risk level</option>
-                                <option value="average">Average Risk</option>
-                                <option value="intermediate">Intermediate Risk</option>
-                                <option value="high">High Risk</option>
-                                <option value="unsure">Not Sure</option>
-                            </select>
+                        <!-- Lead Capture CTA for High Risk -->
+                        <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
+                            <h4 style="color: white; margin-bottom: 1rem;">Lead capture form</h4>
+                            <p style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">Click here to send Dr Abi Tayeh your questions.</p>
+                            <a href="#" id="waHighRisk" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s;">
+                                <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem; font-size: 1.2rem;"></i>
+                                Ask Dr. Georges Abi Tayeh
+                            </a>
                         </div>
-                        
-                        <div>
-                            <label for="questions" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Your Questions or Concerns</label>
-                            <textarea id="questions" name="questions" rows="4" placeholder="Please share any questions or concerns about breast health screening..." style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
                         </div>
-                        
-                        <button type="submit" style="background: #25d366; color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
-                            <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem;"></i>
-                            Send Message to Dr. Georges Abi Tayeh
-                        </button>
-                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- ===== George Abi Tayeh Recommends ===== -->
-        <section id="recommendations" aria-labelledby="recommendations-title">
-            <h2 id="recommendations-title">George Abi Tayeh Recommends</h2>
-            <p class="lead">Expert recommendations for breast health awareness and early detection.</p>
-            <div class="card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; padding: 2rem; margin: 2rem 0;">
-                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+        <!-- ===== Signs and Symptoms Section ===== -->
+        <section id="signs-symptoms" aria-labelledby="signs-symptoms-title" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 3rem 0; margin: 2rem 0;">
+            <div class="container">
+                <h2 id="signs-symptoms-title" style="text-align: center; margin-bottom: 1rem; color: #92400e;">What are the signs and symptoms of breast cancer?</h2>
+                <p class="lead" style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: #78350f;">You may have also heard about breast self-exams and breast self-awareness. This can help you notice changes in your breasts. You should talk to your healthcare provider about any changes you notice.</p>
                 
-                    <div>
-                        <h3 style="margin: 0; color: #92400e; font-size: 1.5rem;">Dr. Georges Abi Tayeh's Expert Advice</h3>
-                        <p style="margin: 0.5rem 0 0 0; color: #78350f; font-weight: 500;">Full Professor & Department Chair</p>
+                <div class="card" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 6px solid #f59e0b;">
+                    <div style="background: #fef2f2; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid #ef4444;">
+                        <p style="margin: 0; font-size: 1.1rem; color: #dc2626; font-weight: 600;">
+                            <i class="fa-solid fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
+                            Lumps, swelling, and redness are often the first symptoms of breast cancer. Everyone may not have the same symptoms.
+                        </p>
                     </div>
+                    
+                    <h3 style="color: #92400e; margin-bottom: 1.5rem;">The most common signs and symptoms of breast cancer are:</h3>
+                    
+                    <div class="grid cols-2" style="gap: 1.5rem;">
+                        <div>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-circle" style="color: #f59e0b; font-size: 0.5rem; margin-right: 1rem; flex-shrink: 0;"></i>
+                                    <span style="color: #374151; font-weight: 500;">A lump or thickness in or near the breast or under your arm.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-circle" style="color: #f59e0b; font-size: 0.5rem; margin-right: 1rem; flex-shrink: 0;"></i>
+                                    <span style="color: #374151; font-weight: 500;">Your breast has swelling (gets bigger) or shrinking (gets smaller), especially on 1 side.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-circle" style="color: #f59e0b; font-size: 0.5rem; margin-right: 1rem; flex-shrink: 0;"></i>
+                                    <span style="color: #374151; font-weight: 500;">Changes in your breast skin, such as redness, flaking, or thickening (skin gets hard).</span>
+                                </li>
+                            </ul>
                 </div>
-                <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
-                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #374151;">
-                        <strong>Talk with your healthcare provider right away if you notice any signs or symptoms.</strong> Look for lumps, swelling, redness, nipple discharge, or changes in your breast size or shape.
-                    </p>
-                </div>
+                        <div>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-circle" style="color: #f59e0b; font-size: 0.5rem; margin-right: 1rem; flex-shrink: 0;"></i>
+                                    <span style="color: #374151; font-weight: 500;">Nipple discharge (fluid coming from your nipple) that is not breast milk.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-circle" style="color: #f59e0b; font-size: 0.5rem; margin-right: 1rem; flex-shrink: 0;"></i>
+                                    <span style="color: #374151; font-weight: 500;">A nipple that becomes sunken (dips inward), red, thick, or scaly.</span>
+                                </li>
+                            </ul>
             </div>
-            
-            <div class="grid cols-2">
-                <div class="card" style="border-left: 4px solid #10b981;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-eye" style="color: #10b981; font-size: 1.5rem; margin-right: 0.75rem;"></i>
-                        <h3 style="margin: 0; color: #065f46;">Early Detection Focus</h3>
-                    </div>
-                    <p>Finding breast cancer early is the main goal of our routine breast care. That's why it's so important to follow this plan for preventive care. Finding problems early gives you the best chance of successful treatment.</p>
                 </div>
                 
-                <div class="card" style="border-left: 4px solid #3b82f6;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-calendar-check" style="color: #3b82f6; font-size: 1.5rem; margin-right: 0.75rem;"></i>
-                        <h3 style="margin: 0; color: #1e40af;">Regular Screening</h3>
+                    <div style="background: #dc2626; color: white; padding: 1.5rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
+                        <h4 style="margin: 0 0 1rem 0; font-size: 1.2rem;">Watch for these signs. Talk with Dr Abi Tayeh about them.</h4>
+                        <a href="#" id="waSymptoms" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s;">
+                            <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem; font-size: 1.2rem;"></i>
+                            Contact Dr. Georges Abi Tayeh
+                        </a>
                     </div>
-                    <p>The Lebanese Ministry of Public Health recommends mammograms yearly starting from the age of 40. Talk with your healthcare provider about your own personal risk factors to determine the best screening schedule for you.</p>
                 </div>
             </div>
         </section>
-<!-- INSERT this block between the "Evidence-Based General Prevention Tips" section and the "When to Seek Care Immediately" section inside <main class="container"> -->
-
-<section id="awareness-image" aria-labelledby="awareness-image-title">
-  <h2 id="awareness-image-title">Awareness at a Glance</h2>
-  <div class="card" style="padding:0; display:flex; justify-content:center; align-items:center;">
-    <!-- Vertical image: constrained width, no cropping -->
-    <img 
-      src="/assets/images/breastcancer/breastcancer.jpg" 
-      alt="Breast cancer awareness"
-      loading="lazy"
-      style="display:block; width:100%; max-width:520px; height:auto; object-fit:contain; border-radius:12px;" />
-  </div>
-</section>
-
-
         <!-- ===== Genetic Testing & New Tools ===== -->
         <section class="card" aria-labelledby="genetics-title" style="background:linear-gradient(180deg,#fff,#fff0fa); border:1px solid #ffe4f3">
-            <h2 id="genetics-title">Genetic Testing & New Tools</h2>
-            <div class="grid cols-2">
+        <h2 id="genetics-title">MyHealthScore</h2>
+        <div class="grid cols-1">
+       
                 <div>
-                    <h3>BRCA1/2 Testing</h3>
-                    <p>Recommended for strong family history of breast/ovarian cancer. Genetic counseling is the essential first step.</p>
-                </div>
-                <div>
-                    <h3>Polygenic Risk Scores (PRS)</h3>
-                    <p>Combine multiple genetic markers to refine risk assessment. New guidelines (2025) support PRS in clinical risk evaluation.</p>
-                </div>
+
+                <p>Combine multiple genetic markers to refine risk assessment. New guidance (2025) supports PRS in clinical risk evaluation.</p>
             </div>
-            <p class="muted">Best used with validated models like CanRisk or Tyrer–Cuzick. Genetic counseling provides proper interpretation and clinical context.</p>
-            <div class="cta-row" style="margin-top:1rem; text-align: center;">
-                <a href="#" class="btn btn-primary">Learn about Genetic Testing</a>
+        </div>
+        <div class="cta-row" style="margin-top:1rem; text-align:center;">
+            <a href="https://myhealthscore.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Learn about Genetic Testing</a>
                 <a href="#" id="waGen" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> Ask about Genetic Testing</a>
             </div>
-            <p class="muted" style="text-align:center; margin-top:1rem">Sources: NHS, ACS, USPSTF, MDPI 2025 PRS Guidance, Lancet Oncology</p>
         </section>
-
 
     </main>
 
@@ -351,6 +445,71 @@
     <script src="/assets/js/breastcancer.js"></script>
     <script src="/assets/js/animations.js"></script>
     
+    <!-- Simple Tab Fallback Script -->
+    <script>
+    // Simple tab functionality that will definitely work
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, setting up tabs...');
+        
+        // Function to handle tab switching
+        function switchTab(button) {
+            const targetTabId = button.getAttribute('data-tab');
+            const tabContainer = button.closest('.tabs-container');
+            
+            if (!tabContainer) return;
+            
+            // Remove active from all buttons in this container
+            const buttons = tabContainer.querySelectorAll('.tab-button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            
+            // Hide all contents in this container
+            const contents = tabContainer.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+            
+            // Activate clicked button
+            button.classList.add('active');
+            button.setAttribute('aria-selected', 'true');
+            
+            // Show target content
+            const targetContent = document.getElementById(targetTabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                targetContent.style.display = 'block';
+                console.log('Switched to tab:', targetTabId);
+            }
+        }
+        
+        // Add click listeners to all tab buttons
+        const tabButtons = document.querySelectorAll('.tab-button');
+        console.log('Found', tabButtons.length, 'tab buttons');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Tab button clicked');
+                switchTab(this);
+            });
+        });
+        
+        // Initialize first tabs
+        const tabContainers = document.querySelectorAll('.tabs-container');
+        tabContainers.forEach(container => {
+            const firstButton = container.querySelector('.tab-button.active');
+            if (firstButton) {
+                switchTab(firstButton);
+            }
+        });
+        
+        console.log('Tab setup complete');
+    });
+    </script>
+    
     <script>
     // Language dropdown functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -375,6 +534,130 @@
         dropdownOptions.forEach(option => {
             option.addEventListener('click', function() {
                 languageSelector.classList.remove('active');
+            });
+        });
+
+        // Simple and reliable tab functionality
+        function setupTabs() {
+            // Use event delegation for better performance and reliability
+            document.addEventListener('click', function(e) {
+                // Check if clicked element is a tab button
+                if (e.target.closest('.tab-button')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const clickedButton = e.target.closest('.tab-button');
+                    const targetTabId = clickedButton.getAttribute('data-tab');
+                    
+                    console.log('Tab clicked:', targetTabId);
+                    
+                    // Find the tab container (parent of the clicked button)
+                    const tabContainer = clickedButton.closest('.tabs-container');
+                    if (!tabContainer) return;
+                    
+                    // Remove active class from all buttons in this container
+                    const allButtons = tabContainer.querySelectorAll('.tab-button');
+                    allButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Hide all tab contents in this container
+                    const allContents = tabContainer.querySelectorAll('.tab-content');
+                    allContents.forEach(content => {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    });
+                    
+                    // Activate clicked button
+                    clickedButton.classList.add('active');
+                    
+                    // Show target content
+                    const targetContent = document.getElementById(targetTabId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                        targetContent.style.display = 'block';
+                        console.log('Showing tab:', targetTabId);
+                    } else {
+                        console.error('Tab content not found:', targetTabId);
+                    }
+                }
+            });
+            
+            // Initialize first tabs on page load
+            setTimeout(function() {
+                const tabContainers = document.querySelectorAll('.tabs-container');
+                tabContainers.forEach(container => {
+                    const firstButton = container.querySelector('.tab-button.active');
+                    const firstContent = container.querySelector('.tab-content.active');
+                    
+                    if (firstButton && firstContent) {
+                        const targetTabId = firstButton.getAttribute('data-tab');
+                        const targetContent = document.getElementById(targetTabId);
+                        
+                        if (targetContent) {
+                            targetContent.style.display = 'block';
+                            console.log('Initialized tab:', targetTabId);
+                        }
+                    }
+                });
+            }, 200);
+        }
+        
+        // Setup tabs when DOM is ready
+        setupTabs();
+
+        // Lead capture form functionality
+        const leadForm = document.querySelector('#lead-capture form');
+        if (leadForm) {
+            leadForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const firstName = formData.get('firstName');
+                const lastName = formData.get('lastName');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const age = formData.get('age');
+                const riskLevel = formData.get('riskLevel');
+                const questions = formData.get('questions');
+                
+                // Create WhatsApp message
+                const message = `Hello Dr. Georges Abi Tayeh,
+
+I would like to learn more about breast health screening.
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Age: ${age}
+Risk Level: ${riskLevel}
+Questions: ${questions || 'No specific questions'}
+
+Thank you for your time.`;
+                
+                // WhatsApp URL
+                const whatsappUrl = `https://wa.me/96170123456?text=${encodeURIComponent(message)}`;
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+
+        // WhatsApp buttons functionality
+        const waButtons = document.querySelectorAll('[id^="wa"]');
+        waButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                let message = "Hello Dr. Georges Abi Tayeh,\n\nI would like to learn more about breast health screening.\n\nThank you for your time.";
+                
+                // Customize message based on button ID
+                if (this.id === 'waHighRisk') {
+                    message = "Hello Dr. Georges Abi Tayeh,\n\nI believe I may be at higher risk for breast cancer and would like to discuss screening options.\n\nThank you for your time.";
+                } else if (this.id === 'waSymptoms') {
+                    message = "Hello Dr. Georges Abi Tayeh,\n\nI have noticed some changes in my breasts and would like to discuss them with you.\n\nThank you for your time.";
+                }
+                
+                const whatsappUrl = `https://wa.me/96170123456?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
             });
         });
     });
