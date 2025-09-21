@@ -12,6 +12,144 @@
     <link rel="stylesheet" href="/assets/css/breastcancer.css?v=20250920">
     <script src="/assets/js/analytics.js"></script>
     <script src="/assets/js/translations.js?v=20250120"></script>
+    
+    <style>
+        /* Smooth sliding animations */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-down {
+            opacity: 0;
+            transform: translateY(-40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Animation classes when visible */
+        .slide-in-left.animate,
+        .slide-in-right.animate,
+        .slide-in-up.animate,
+        .slide-in-down.animate,
+        .fade-in.animate,
+        .scale-in.animate {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+        }
+        
+        /* Staggered animations */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        
+        /* Smooth hover effects */
+        .card, .tab-button, .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .tab-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Floating elements animation */
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Pulse animation for important elements */
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Ensure animations work on mobile */
+        @media (prefers-reduced-motion: no-preference) {
+            .slide-in-left,
+            .slide-in-right,
+            .slide-in-up,
+            .slide-in-down,
+            .fade-in,
+            .scale-in {
+                will-change: transform, opacity;
+            }
+        }
+        
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .slide-in-left,
+            .slide-in-right,
+            .slide-in-up,
+            .slide-in-down,
+            .fade-in,
+            .scale-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+        
+        /* Fallback: Show elements after 1 second if JavaScript fails */
+        .slide-in-left,
+        .slide-in-right,
+        .slide-in-up,
+        .slide-in-down,
+        .fade-in,
+        .scale-in {
+            animation: fallback-show 0.1s ease-out 1s forwards;
+        }
+        
+        @keyframes fallback-show {
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0) scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,37 +165,37 @@
             <div style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; text-align: center;">
                 <!-- Content -->
                 <div style="text-align: center; width: 100%;">
-                    <div style="display: inline-flex; align-items: center; background: rgba(236, 72, 153, 0.1); color: #be185d; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(236, 72, 153, 0.2);">
+                    <div class="slide-in-down" style="display: inline-flex; align-items: center; background: rgba(236, 72, 153, 0.1); color: #be185d; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(236, 72, 153, 0.2);">
                         <i class="fa-solid fa-heart" style="margin-right: 0.5rem;"></i>
                         Fertility Center
                     </div>
                     
-                    <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #1f2937; margin-bottom: 1rem; line-height: 1.1;">
+                    <h1 class="slide-in-up stagger-1" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #1f2937; margin-bottom: 1rem; line-height: 1.1;">
                         Breast Health
                     </h1>
                     
-                    <p style="font-size: 1.4rem; color: #6b7280; margin-bottom: 2rem; font-weight: 500; line-height: 1.4;">
+                    <p class="slide-in-up stagger-2" style="font-size: 1.4rem; color: #6b7280; margin-bottom: 2rem; font-weight: 500; line-height: 1.4;">
                         Every woman deserves a personalized breast health screening plan
                     </p>
                     
                     <!-- Main Image -->
-                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; margin-left: 2rem; margin-right: 2rem;">
+                    <div class="scale-in stagger-3" style="display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; margin-left: 2rem; margin-right: 2rem;">
                         <div style="position: relative;">
                             <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); padding: 1rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);">
                                 <img src="/assets/images/breastcancer/cheblazar.png" alt="Dr. Georges Abi Tayeh - Breast Health Specialist" style="width: 100%; max-width: 400px; height: auto; border-radius: 16px; display: block;">
                             </div>
                             <!-- Floating elements -->
-                            <div style="position: absolute; top: -20px; right: -20px; background: #10b981; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+                            <div class="float-animation" style="position: absolute; top: -20px; right: -20px; background: #10b981; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
                                 <i class="fa-solid fa-shield-heart" style="font-size: 1.5rem;"></i>
                             </div>
-                            <div style="position: absolute; bottom: -20px; left: -20px; background: #3b82f6; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">
+                            <div class="float-animation" style="position: absolute; bottom: -20px; left: -20px; background: #3b82f6; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); animation-delay: 1s;">
                                 <i class="fa-solid fa-stethoscope" style="font-size: 1.5rem;"></i>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Quote Card -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 4px solid #ec4899; margin-bottom: 2rem;">
+                    <div class="slide-in-up stagger-4 card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 4px solid #ec4899; margin-bottom: 2rem;">
                         
                         <blockquote style="font-size: 1.1rem; line-height: 1.6; color: #374151; margin: 0; font-style: italic; position: relative;">
                             <i class="fa-solid fa-quote-left" style="color: #ec4899; font-size: 1.5rem; position: absolute; top: -10px; left: -10px;"></i>
@@ -71,7 +209,7 @@
                 </div>
                     
                     <!-- CTA Button -->
-                    <a href="#" id="waHero" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;">
+                    <a href="#" id="waHero" class="btn pulse-animation" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; border: none; outline: none;">
                         <i class="fa-brands fa-whatsapp" style="margin-right: 0.75rem; font-size: 1.2rem;"></i>
                         Schedule Consultation
                     </a>
@@ -84,9 +222,14 @@
     
 
         <!-- ===== Risk Factors Section ===== -->
-        <section id="risk-factors" aria-labelledby="risk-factors-title">
+        <section id="risk-factors" class="slide-in-up" aria-labelledby="risk-factors-title">
             <h2 id="risk-factors-title">Can you lower your risk for breast cancer?</h2>
             <p class="lead">A risk factor is anything that raises your chances of getting a disease.</p>
+            
+            <!-- Men's Breast Cancer Awareness Image -->
+                <div style="text-align: center; margin: 2rem 1rem;">
+                    <img src="/assets/images/breastcancer/breastcancer4.jpg" alt="Men's Breast Cancer Awareness - Breast cancer can affect men too" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                </div>
             
             <!-- Risk Factors Tabs -->
             <div class="tabs-container" style="margin: 2rem 0;">
@@ -111,27 +254,45 @@
                         <div class="grid cols-2" style="gap: 1.5rem;">
                             <div>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Gender:</strong> Females are much more likely to develop breast cancer than others.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-venus" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Gender:</strong> Females are much more likely to develop breast cancer than others.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Age:</strong> Breast cancer risk increases with age, with most breast cancers developing after the age of 50.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-calendar-days" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Age:</strong> Breast cancer risk increases with age, with most breast cancers developing after the age of 50.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Genetic mutations:</strong> Inherited gene mutations cause breast cancers. These genetic mutations can be passed on from either parent, to any child.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-dna" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Genetic mutations:</strong> Inherited gene mutations cause breast cancers. These genetic mutations can be passed on from either parent, to any child.
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             <div>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Family history:</strong> Your risk increases if your mother, sister, father, or child had breast cancer, especially if the diagnosis was before the age of 50.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-users" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Family history:</strong> Your risk increases if your mother, sister, father, or child had breast cancer, especially if the diagnosis was before the age of 50.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Menstrual and reproductive health history:</strong> Women who menstruated early (before the age of 12), entered menopause late (after 55), gave birth at an older age, or never gave birth have an increased risk for breast cancer.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-heart-pulse" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Menstrual and reproductive health history:</strong> Women who menstruated early (before the age of 12), entered menopause late (after 55), gave birth at an older age, or never gave birth have an increased risk for breast cancer.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
-                                        <strong style="color: #dc2626;">Dense breast tissue:</strong> Having dense breasts increases your risk and often makes breast masses harder to detect.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #ef4444; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-circle-dot" style="color: #dc2626; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #dc2626;">Dense breast tissue:</strong> Having dense breasts increases your risk and often makes breast masses harder to detect.
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -152,27 +313,45 @@
                         <div class="grid cols-2" style="gap: 1.5rem;">
                             <div>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Physical inactivity:</strong> Breast cancer risk increases with a sedentary lifestyle.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-couch" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Physical inactivity:</strong> Breast cancer risk increases with a sedentary lifestyle.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Being overweight or obese:</strong> An unhealthy weight increases your risk of breast cancer, especially if you are overweight or obese following menopause.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-weight-scale" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Being overweight or obese:</strong> An unhealthy weight increases your risk of breast cancer, especially if you are overweight or obese following menopause.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Alcohol consumption:</strong> Drinking alcohol frequently increases your risk of breast cancer.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-wine-glass" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Alcohol consumption:</strong> Drinking alcohol frequently increases your risk of breast cancer.
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                             <div>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Childbirth choices:</strong> Your chances of breast cancer increase if you never have biological children, have your first child after the age of 35, or never breastfeed.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-baby" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Childbirth choices:</strong> Your chances of breast cancer increase if you never have biological children, have your first child after the age of 35, or never breastfeed.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Radiation to the chest:</strong> Having radiation therapy to the chest before the age of 30 may increase your risk.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-radiation" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Radiation to the chest:</strong> Having radiation therapy to the chest before the age of 30 may increase your risk.
+                                        </div>
                                     </li>
-                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e;">
-                                        <strong style="color: #16a34a;">Get regular check-ups:</strong> Regular check-ups with your healthcare provider.
+                                    <li style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #22c55e; display: flex; align-items: flex-start;">
+                                        <i class="fa-solid fa-stethoscope" style="color: #16a34a; font-size: 1.2rem; margin-right: 0.75rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong style="color: #16a34a;">Get regular check-ups:</strong> Regular check-ups with your healthcare provider.
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -183,12 +362,15 @@
         </section>
 
         <!-- ===== Breast Cancer Screening Section ===== -->
-        <section id="breast-screening" aria-labelledby="breast-screening-title" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 3rem 0; margin: 2rem 0;">
-            <div class="container">
+        <section id="breast-screening" class="slide-in-up" aria-labelledby="breast-screening-title" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 3rem 0; margin: 2rem 0;">
+            <div class="container" style="padding-left: 1rem; padding-right: 1rem;">
                 <h2 id="breast-screening-title" style="text-align: center; margin-bottom: 1rem; color: #1e40af;">What is breast cancer screening?</h2>
                 <p class="lead" style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: #64748b;">Breast cancer screening means getting regular tests to find breast cancer, even before you have any signs or symptoms. Regular screenings help find cancer early, when it's easier to treat.</p>
-                
-                <div class="card" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <div style="text-align: center; margin: 2rem 1rem;">
+                    <img src="/assets/images/breastcancer/breastcancer3.jpg" alt="Men's Breast Cancer Awareness - Breast cancer can affect men too" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                </div>
+                   
+                <div class="card scale-in" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #1e40af; margin-bottom: 1.5rem; text-align: center;">Benefits of regular breast cancer screenings include:</h3>
                     <div class="grid cols-2" style="gap: 1.5rem;">
                         <div style="display: flex; align-items: center; padding: 1rem; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
@@ -213,10 +395,13 @@
         </section>
 
         <!-- ===== Screening Recommendations Section ===== -->
-        <section id="screening-recommendations" aria-labelledby="screening-recommendations-title">
+        <section id="screening-recommendations" class="slide-in-up" aria-labelledby="screening-recommendations-title">
             <h2 id="screening-recommendations-title">Breast Cancer Screening Recommendations</h2>
             <p class="lead">It all depends on your level of risk.</p>
-            
+            <div style="text-align: center; margin: 2rem 1rem;">
+                <img src="/assets/images/breastcancer/breastcancer2.jpg" alt="Men's Breast Cancer Awareness - Breast cancer can affect men too" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+            </div>
+               
             <!-- Screening Recommendations Tabs -->
             <div class="tabs-container" style="margin: 2rem 0;">
                 <div class="tabs-header" role="tablist" aria-label="Screening recommendations tabs">
@@ -238,7 +423,7 @@
                         <div class="screening-methods" style="display: grid; gap: 1.5rem;">
                             <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #0ea5e9;">
                                 <h4 style="color: #0369a1; margin-bottom: 1rem; display: flex; align-items: center;">
-                                    <i class="fa-solid fa-x-ray" style="margin-right: 0.75rem;"></i>
+                                    <i class="fa-solid fa-user-md" style="margin-right: 0.75rem;"></i>
                                     Mammography
                                 </h4>
                                 <p style="margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Every year starting at age 40</p>
@@ -280,49 +465,53 @@
                             </ul>
                         </div>
                         
-                        <!-- Screening Guidelines Tables -->
-                        <div style="overflow-x: auto; margin: 2rem 0;">
+                        <!-- Screening Guidelines Cards -->
+                        <div style="margin: 2rem 0;">
                             <h4 style="color: #dc2626; margin-bottom: 1rem;">ACS breast cancer screening guidelines for women at higher risk</h4>
-                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                                <thead>
-                                    <tr style="background: #dc2626; color: white;">
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Estimated Risk</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Clinical Breast Exam</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Mammogram</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Breast MRI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="border-bottom: 1px solid #e5e7eb;">
-                                        <td data-label="Estimated Risk" style="padding: 1rem; font-weight: 600; color: #374151;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</td>
-                                        <td data-label="Clinical Breast Exam" style="padding: 1rem; color: #6b7280;">Not recommended</td>
-                                        <td data-label="Mammogram" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
-                                        <td data-label="Breast MRI" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #dc2626;">
+                                <div style="margin-bottom: 1rem;">
+                                    <h5 style="color: #dc2626; margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Estimated Risk</h5>
+                                    <p style="margin: 0; color: #374151; font-weight: 600; line-height: 1.5;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</p>
+                                </div>
+                                <div style="display: grid; gap: 1rem;">
+                                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <h6 style="color: #1e40af; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Clinical Breast Exam</h6>
+                                        <p style="margin: 0; color: #6b7280;">Not recommended</p>
+                                    </div>
+                                    <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <h6 style="color: #16a34a; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Mammogram</h6>
+                                        <p style="margin: 0; color: #6b7280; line-height: 1.5;">Every year starting at age 30 or age recommended by health care provider</p>
+                                    </div>
+                                    <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <h6 style="color: #d97706; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Breast MRI</h6>
+                                        <p style="margin: 0; color: #6b7280; line-height: 1.5;">Every year starting at age 30 or age recommended by health care provider</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div style="overflow-x: auto; margin: 2rem 0;">
+                        <div style="margin: 2rem 0;">
                             <h4 style="color: #dc2626; margin-bottom: 1rem;">NCCN breast cancer screening guidelines for women at higher risk</h4>
-                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                                <thead>
-                                    <tr style="background: #dc2626; color: white;">
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Estimated Risk</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Clinical Breast Exam</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Mammogram</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600;">Breast MRI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="border-bottom: 1px solid #e5e7eb;">
-                                        <td data-label="Estimated Risk" style="padding: 1rem; font-weight: 600; color: #374151;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</td>
-                                        <td data-label="Clinical Breast Exam" style="padding: 1rem; color: #6b7280;">Not recommended</td>
-                                        <td data-label="Mammogram" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
-                                        <td data-label="Breast MRI" style="padding: 1rem; color: #6b7280;">Every year starting at age 30 or age recommended by health care provider</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #dc2626;">
+                                <div style="margin-bottom: 1rem;">
+                                    <h5 style="color: #dc2626; margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Estimated Risk</h5>
+                                    <p style="margin: 0; color: #374151; font-weight: 600; line-height: 1.5;">Women at about 20% to 25% or greater lifetime risk of invasive breast cancer based mainly on family history</p>
+                                </div>
+                                <div style="display: grid; gap: 1rem;">
+                                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <h6 style="color: #1e40af; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Clinical Breast Exam</h6>
+                                        <p style="margin: 0; color: #6b7280;">Not recommended</p>
+                                    </div>
+                                    <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; border-left: 3px solid #22c55e;">
+                                        <h6 style="color: #16a34a; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Mammogram</h6>
+                                        <p style="margin: 0; color: #6b7280; line-height: 1.5;">Every year starting at age 30 or age recommended by health care provider</p>
+                                    </div>
+                                    <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <h6 style="color: #d97706; margin: 0 0 0.5rem 0; font-size: 0.9rem; font-weight: 600;">Breast MRI</h6>
+                                        <p style="margin: 0; color: #6b7280; line-height: 1.5;">Every year starting at age 30 or age recommended by health care provider</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- Lead Capture CTA for High Risk -->
@@ -340,12 +529,14 @@
         </section>
 
         <!-- ===== Signs and Symptoms Section ===== -->
-        <section id="signs-symptoms" aria-labelledby="signs-symptoms-title" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 3rem 0; margin: 2rem 0;">
+        <section id="signs-symptoms" class="slide-in-up" aria-labelledby="signs-symptoms-title" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 3rem 0; margin: 2rem 0;">
             <div class="container">
                 <h2 id="signs-symptoms-title" style="text-align: center; margin-bottom: 1rem; color: #92400e;">What are the signs and symptoms of breast cancer?</h2>
                 <p class="lead" style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: #78350f;">You may have also heard about breast self-exams and breast self-awareness. This can help you notice changes in your breasts. You should talk to your healthcare provider about any changes you notice.</p>
-                
-                <div class="card" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 6px solid #f59e0b;">
+                <div style="text-align: center; margin: 2rem 1rem;">
+                    <img src="/assets/images/breastcancer/breastcancer.jpg" alt="Men's Breast Cancer Awareness - Breast cancer can affect men too" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                </div>
+                <div class="card scale-in" style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 6px solid #f59e0b;">
                     <div style="background: #fef2f2; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid #ef4444;">
                         <p style="margin: 0; font-size: 1.1rem; color: #dc2626; font-weight: 600;">
                             <i class="fa-solid fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
@@ -388,10 +579,23 @@
                 
                     <div style="background: #dc2626; color: white; padding: 1.5rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
                         <h4 style="margin: 0 0 1rem 0; font-size: 1.2rem;">Watch for these signs. Talk with Dr Abi Tayeh about them.</h4>
-                        <a href="#" id="waSymptoms" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s;">
-                            <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem; font-size: 1.2rem;"></i>
-                            Contact Dr. Georges Abi Tayeh
-                        </a>
+                        
+                        <form id="symptomsForm" style="max-width: 500px; margin: 0 auto;">
+                            <div style="margin-bottom: 1rem; text-align: left;">
+                                <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Full Name:</label>
+                                <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; text-align: left;">
+                                <label for="question" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Your Question:</label>
+                                <textarea id="question" name="question" required rows="4" style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; resize: vertical; box-sizing: border-box;" placeholder="Describe your symptoms or ask your question here..."></textarea>
+                            </div>
+                            
+                            <button type="submit" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem; font-size: 1.2rem;"></i>
+                                Send Your Question
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -603,6 +807,47 @@
         
         // Setup tabs when DOM is ready
         setupTabs();
+        
+        // Smooth sliding animations on scroll
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        // Unobserve after animation to prevent re-triggering
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .fade-in, .scale-in');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            console.log('Observing', animatedElements.length, 'animated elements');
+        }
+        
+        // Initialize animations when DOM is ready
+        setTimeout(setupScrollAnimations, 100);
+        
+        // Also trigger animations immediately for elements already in view
+        setTimeout(function() {
+            const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .fade-in, .scale-in');
+            animatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+                if (isInView) {
+                    el.classList.add('animate');
+                }
+            });
+        }, 200);
 
         // Lead capture form functionality
         const leadForm = document.querySelector('#lead-capture form');
@@ -634,32 +879,59 @@ Questions: ${questions || 'No specific questions'}
 Thank you for your time.`;
                 
                 // WhatsApp URL
-                const whatsappUrl = `https://wa.me/96170123456?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/96176659170?text=${encodeURIComponent(message)}`;
                 
                 // Open WhatsApp
                 window.open(whatsappUrl, '_blank');
             });
         }
 
-        // WhatsApp buttons functionality
-        const waButtons = document.querySelectorAll('[id^="wa"]');
-        waButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
+        // WhatsApp buttons functionality - handled by external breastcancer.js
+
+        // Symptoms form functionality - SIMPLE AND DIRECT
+        const symptomsForm = document.getElementById('symptomsForm');
+        console.log('Symptoms form found:', symptomsForm);
+        if (symptomsForm) {
+            symptomsForm.addEventListener('submit', function(e) {
                 e.preventDefault();
+                console.log('Form submitted - preventing default');
                 
-                let message = "Hello Dr. Georges Abi Tayeh,\n\nI would like to learn more about breast health screening.\n\nThank you for your time.";
+                const fullName = document.getElementById('fullName').value.trim();
+                const question = document.getElementById('question').value.trim();
                 
-                // Customize message based on button ID
-                if (this.id === 'waHighRisk') {
-                    message = "Hello Dr. Georges Abi Tayeh,\n\nI believe I may be at higher risk for breast cancer and would like to discuss screening options.\n\nThank you for your time.";
-                } else if (this.id === 'waSymptoms') {
-                    message = "Hello Dr. Georges Abi Tayeh,\n\nI have noticed some changes in my breasts and would like to discuss them with you.\n\nThank you for your time.";
+                console.log('Full name:', fullName);
+                console.log('Question:', question);
+                
+                if (!fullName || !question) {
+                    alert('Please fill in both your name and question.');
+                    return;
                 }
                 
-                const whatsappUrl = `https://wa.me/96170123456?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
+                // Create the sentence that will be sent to WhatsApp
+                const sentence = 'Hi, my name is ' + fullName + ' and here\'s my question for Dr. Georges Abi Tayeh: ' + question;
+                console.log('Created sentence:', sentence);
+                
+                // Encode the sentence for WhatsApp URL
+                const whatsappMessage = encodeURIComponent(sentence);
+                console.log('Encoded message:', whatsappMessage);
+                
+                // Create WhatsApp link that will redirect to WhatsApp with the sentence pre-filled
+                const whatsappLink = 'https://wa.me/96176659170?text=' + whatsappMessage;
+                console.log('WhatsApp link:', whatsappLink);
+                
+                // Redirect to WhatsApp with the sentence pre-filled
+                window.open(whatsappLink, '_blank');
+                
+                // Show success message (same as DrMaryChammas)
+                alert('Thank you for your question! WhatsApp will open with a pre-filled message. Please send the message to Dr. Georges Abi Tayeh.');
+                
+                // Clear form after submission
+                this.reset();
             });
-        });
+            console.log('Symptoms form event listener added successfully');
+        } else {
+            console.log('Symptoms form not found!');
+        }
     });
     </script>
 </body>

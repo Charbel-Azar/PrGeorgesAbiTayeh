@@ -1,27 +1,20 @@
 
-const CLINIC_PHONE = '9613110898';
+const CLINIC_PHONE = '96176659170';
 const WA_MESSAGE = 'Hi, I am interested in a consultation.';
 
 function openWhatsApp(phone, text){
     const n = String(phone);
     const msg = encodeURIComponent(text || '');
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const web = 'https://web.whatsapp.com/send?phone=' + n + '&text=' + msg;
-    const api = 'https://api.whatsapp.com/send?phone=' + n + '&text=' + msg;
     
-    if(!isMobile){
-        window.open(web, '_blank','noopener');
-        return;
-    }
+    // Create WhatsApp link (same format as DrMaryChammas)
+    const whatsappLink = 'https://wa.me/' + n + '?text=' + msg;
     
-    location.href = 'whatsapp://send?phone=' + n + '&text=' + msg;
-    setTimeout(function(){
-        location.href = api;
-    }, 700);
+    // Open WhatsApp (same approach as DrMaryChammas)
+    window.open(whatsappLink, '_blank');
 }
 
 // WhatsApp button event listeners
-[['waHero'],['waGen'],['floatWA'],['waDoctor']].forEach(function(pair){
+[['waHero'],['waHighRisk'],['floatWA'],['waDoctor']].forEach(function(pair){
     var id = pair[0];
     var el = document.getElementById(id);
     if(el){
@@ -31,6 +24,15 @@ function openWhatsApp(phone, text){
         });
     }
 });
+
+// Special handling for genetic testing button
+var waGenEl = document.getElementById('waGen');
+if(waGenEl){
+    waGenEl.addEventListener('click', function(e){
+        e.preventDefault();
+        openWhatsApp('9613110898', 'Hi I am interested in your myhealthscore test and I am a patient for pr georges abi tayeh');
+    });
+}
 
 // Share functionality
 (function(){
