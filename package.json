@@ -1,7 +1,7 @@
 {
-  "name": "drcheblazar",
+  "name": "prgeorgesabitayeh",
   "version": "1.0.0",
-  "description": "Dr. Chebl Azar - Breast Cancer Awareness Portal",
+  "description": "Dr. Georges Abi Tayeh - Breast Health Specialist & Preventive Care Expert",
   "main": "index.html",
   "scripts": {
     "dev": "vercel dev",
@@ -13,8 +13,10 @@
     "awareness",
     "health",
     "genetic-testing",
-    "oncology"
+    "oncology",
+    "fertility",
+    "preventive-care"
   ],
-  "author": "Dr. Chebl Azar",
+  "author": "Dr. Georges Abi Tayeh",
   "license": "MIT"
 }
