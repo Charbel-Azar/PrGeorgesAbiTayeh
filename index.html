@@ -577,26 +577,32 @@
             </div>
                 </div>
                 
-                    <div style="background: #dc2626; color: white; padding: 1.5rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
-                        <h4 style="margin: 0 0 1rem 0; font-size: 1.2rem;">Watch for these signs. Talk with Dr Abi Tayeh about them.</h4>
+                <!-- NEW SIMPLE FORM -->
+                <div style="background: #dc2626; color: white; padding: 2rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
+                    <h4 style="margin: 0 0 1.5rem 0; font-size: 1.3rem;">Ask Dr. Georges Abi Tayeh a Question</h4>
+                    
+                    <form id="questionForm" style="max-width: 500px; margin: 0 auto;">
+                        <div style="margin-bottom: 1rem; text-align: left;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Your Name:</label>
+                            <input type="text" id="name" name="name" required 
+                                   style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" 
+                                   placeholder="Enter your full name">
+                        </div>
                         
-                        <form id="symptomsForm" style="max-width: 500px; margin: 0 auto;">
-                            <div style="margin-bottom: 1rem; text-align: left;">
-                                <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Full Name:</label>
-                                <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" placeholder="Enter your full name">
-                            </div>
-                            
-                            <div style="margin-bottom: 1.5rem; text-align: left;">
-                                <label for="question" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Your Question:</label>
-                                <textarea id="question" name="question" required rows="4" style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; resize: vertical; box-sizing: border-box;" placeholder="Describe your symptoms or ask your question here..."></textarea>
-                            </div>
-                            
-                            <button type="submit" style="display: inline-flex; align-items: center; background: #25d366; color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">
-                                <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem; font-size: 1.2rem;"></i>
-                                Send Your Question
-                            </button>
-                        </form>
-                    </div>
+                        <div style="margin-bottom: 1.5rem; text-align: left;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: white;">Your Question:</label>
+                            <textarea id="message" name="message" required rows="4" 
+                                      style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; font-size: 1rem; resize: vertical; box-sizing: border-box;" 
+                                      placeholder="Ask your question here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background: #25d366; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem;"></i>
+                            Send to WhatsApp
+                        </button>
+                    </form>
+                </div>
+                
                 </div>
             </div>
         </section>
@@ -888,49 +894,91 @@ Thank you for your time.`;
 
         // WhatsApp buttons functionality - handled by external breastcancer.js
 
-        // Symptoms form functionality - SIMPLE AND DIRECT
-        const symptomsForm = document.getElementById('symptomsForm');
-        console.log('Symptoms form found:', symptomsForm);
-        if (symptomsForm) {
-            symptomsForm.addEventListener('submit', function(e) {
+        // NEW SIMPLE FORM FUNCTIONALITY - WITH PROPER DEBUGGING
+        console.log('Setting up form functionality...');
+        const questionForm = document.getElementById('questionForm');
+        console.log('Form found:', questionForm);
+        
+        if (questionForm) {
+            console.log('Adding event listener to form...');
+            questionForm.addEventListener('submit', function(e) {
+                console.log('Form submitted!');
                 e.preventDefault();
-                console.log('Form submitted - preventing default');
                 
-                const fullName = document.getElementById('fullName').value.trim();
-                const question = document.getElementById('question').value.trim();
+                const name = document.getElementById('name').value.trim();
+                const message = document.getElementById('message').value.trim();
                 
-                console.log('Full name:', fullName);
-                console.log('Question:', question);
+                console.log('Name:', name);
+                console.log('Message:', message);
                 
-                if (!fullName || !question) {
+                if (!name || !message) {
                     alert('Please fill in both your name and question.');
                     return;
                 }
                 
-                // Create the sentence that will be sent to WhatsApp
-                const sentence = 'Hi, my name is ' + fullName + ' and here\'s my question for Dr. Georges Abi Tayeh: ' + question;
-                console.log('Created sentence:', sentence);
+                // Create WhatsApp message
+                const whatsappMessage = 'Hi, my name is ' + name + ' and my question is: ' + message;
+                console.log('WhatsApp message:', whatsappMessage);
                 
-                // Encode the sentence for WhatsApp URL
-                const whatsappMessage = encodeURIComponent(sentence);
-                console.log('Encoded message:', whatsappMessage);
-                
-                // Create WhatsApp link that will redirect to WhatsApp with the sentence pre-filled
-                const whatsappLink = 'https://wa.me/96176659170?text=' + whatsappMessage;
+                // Create WhatsApp link
+                const whatsappLink = 'https://wa.me/96176659170?text=' + encodeURIComponent(whatsappMessage);
                 console.log('WhatsApp link:', whatsappLink);
                 
-                // Redirect to WhatsApp with the sentence pre-filled
+                // Open WhatsApp
                 window.open(whatsappLink, '_blank');
                 
-                // Show success message (same as DrMaryChammas)
-                alert('Thank you for your question! WhatsApp will open with a pre-filled message. Please send the message to Dr. Georges Abi Tayeh.');
+                // Show success message
+                alert('WhatsApp will open with your message. Please send it to Dr. Georges Abi Tayeh.');
                 
-                // Clear form after submission
+                // Clear form
+                this.reset();
+                console.log('Form reset complete');
+            });
+            console.log('Event listener added successfully');
+        } else {
+            console.error('Form not found!');
+        }
+
+    });
+    </script>
+    
+    <!-- FALLBACK SCRIPT - RUNS AFTER DOM IS LOADED -->
+    <script>
+    // Fallback form setup - runs after everything is loaded
+    window.addEventListener('load', function() {
+        console.log('Window loaded, setting up fallback form...');
+        
+        const fallbackForm = document.getElementById('questionForm');
+        if (fallbackForm && !fallbackForm.hasAttribute('data-listener-added')) {
+            console.log('Adding fallback event listener...');
+            fallbackForm.setAttribute('data-listener-added', 'true');
+            
+            fallbackForm.addEventListener('submit', function(e) {
+                console.log('FALLBACK: Form submitted!');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const name = document.getElementById('name').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                console.log('FALLBACK: Name:', name);
+                console.log('FALLBACK: Message:', message);
+                
+                if (!name || !message) {
+                    alert('Please fill in both your name and question.');
+                    return;
+                }
+                
+                const whatsappMessage = 'Hi, my name is ' + name + ' and my question is: ' + message;
+                const whatsappLink = 'https://wa.me/96176659170?text=' + encodeURIComponent(whatsappMessage);
+                
+                console.log('FALLBACK: Opening WhatsApp:', whatsappLink);
+                window.open(whatsappLink, '_blank');
+                
+                alert('WhatsApp will open with your message. Please send it to Dr. Georges Abi Tayeh.');
                 this.reset();
             });
-            console.log('Symptoms form event listener added successfully');
-        } else {
-            console.log('Symptoms form not found!');
+            console.log('Fallback event listener added');
         }
     });
     </script>
