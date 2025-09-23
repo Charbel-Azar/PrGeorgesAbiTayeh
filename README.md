@@ -1,4 +1,4 @@
-# Dr. Mary Chammas - Breast Cancer Awareness Portal
+# Pr. Georges Abi Tayeh - Breast Cancer Awareness Portal
 
 A comprehensive breast cancer awareness and education portal featuring evidence-based information, screening guidelines, and genetic testing resources.
 
