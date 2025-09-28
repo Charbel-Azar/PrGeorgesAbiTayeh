@@ -13,11 +13,11 @@
     // CSS for animations
     const animationCSS = `
         <style id="scroll-animations">
-            /* Fade in animations */
+            /* Enhanced fade in animations with smooth transitions */
             .fade-in {
                 opacity: 0;
-                transform: translateY(20px);
-                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateY(30px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .fade-in.animate {
@@ -25,11 +25,11 @@
                 transform: translateY(0);
             }
             
-            /* Slide in from left */
+            /* Slide in from left with enhanced easing */
             .slide-left {
                 opacity: 0;
-                transform: translateX(-50px);
-                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateX(-60px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .slide-left.animate {
@@ -37,11 +37,11 @@
                 transform: translateX(0);
             }
             
-            /* Slide in from right */
+            /* Slide in from right with enhanced easing */
             .slide-right {
                 opacity: 0;
-                transform: translateX(50px);
-                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateX(60px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .slide-right.animate {
@@ -49,11 +49,35 @@
                 transform: translateX(0);
             }
             
-            /* Scale in animation */
+            /* Slide in from up */
+            .slide-up {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
+            .slide-up.animate {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Slide in from down */
+            .slide-down {
+                opacity: 0;
+                transform: translateY(-40px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
+            .slide-down.animate {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Enhanced scale in animation */
             .scale-in {
                 opacity: 0;
                 transform: scale(0.8);
-                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .scale-in.animate {
@@ -61,11 +85,11 @@
                 transform: scale(1);
             }
             
-            /* Stagger animation for cards */
+            /* Enhanced stagger animation for cards */
             .stagger-item {
                 opacity: 0;
-                transform: translateY(15px);
-                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateY(20px);
+                transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .stagger-item.animate {
@@ -73,9 +97,14 @@
                 transform: translateY(0);
             }
             
-            /* Hero text animation - removed to prevent conflict with CSS animations */
+            /* Stagger delays for sequential animations */
+            .stagger-1 { transition-delay: 0.1s; }
+            .stagger-2 { transition-delay: 0.2s; }
+            .stagger-3 { transition-delay: 0.3s; }
+            .stagger-4 { transition-delay: 0.4s; }
+            .stagger-5 { transition-delay: 0.5s; }
             
-            /* Floating animation for ribbons */
+            /* Floating animation for decorative elements */
             .floating {
                 animation: floating 3s ease-in-out infinite;
             }
@@ -89,17 +118,41 @@
                 }
             }
             
-            /* Pulse animation for buttons */
+            /* Enhanced pulse animation for buttons */
             .pulse-on-scroll {
-                transition: all 0.3s ease;
+                transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .pulse-on-scroll:hover {
                 transform: scale(1.05);
-                box-shadow: 0 10px 30px rgba(255, 77, 166, 0.3);
+                box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
             }
             
-            /* Gradient animation removed to prevent conflict with existing CSS */
+            /* Smooth hover effects for cards */
+            .card {
+                transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            }
+            
+            /* Respect user's motion preferences */
+            @media (prefers-reduced-motion: reduce) {
+                .fade-in, .slide-left, .slide-right, .slide-up, .slide-down, .scale-in, .stagger-item {
+                    opacity: 1;
+                    transform: none;
+                    transition: none;
+                }
+            }
+            
+            /* Ensure animations work on mobile */
+            @media (prefers-reduced-motion: no-preference) {
+                .fade-in, .slide-left, .slide-right, .slide-up, .slide-down, .scale-in, .stagger-item {
+                    will-change: transform, opacity;
+                }
+            }
         </style>
     `;
 
@@ -130,102 +183,136 @@
 
     // Apply animations to elements
     function initAnimations() {
-        // Hero section - removed JavaScript animations to prevent conflict with CSS animations
-
-        // Hero gradient animation removed to prevent conflict with existing CSS animations
-
-        // Doctor section - more subtle animation
-        const doctorSection = document.querySelector('#doctor');
-        if (doctorSection) {
-            const doctorTitle = doctorSection.querySelector('h2');
-            const doctorLead = doctorSection.querySelector('.lead');
-            const doctorGrid = doctorSection.querySelector('.grid');
+        console.log('Initializing animations...');
+        
+        // Hero section animations
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            const heroTitle = heroSection.querySelector('h1');
+            const heroSubtitle = heroSection.querySelector('p');
+            const heroImage = heroSection.querySelector('img');
+            const heroQuote = heroSection.querySelector('blockquote');
+            const heroButton = heroSection.querySelector('.btn');
             
-            if (doctorTitle) doctorTitle.classList.add('fade-in');
-            if (doctorLead) doctorLead.classList.add('fade-in');
-            if (doctorGrid) {
-                doctorGrid.classList.add('stagger-container');
-                const cards = doctorGrid.querySelectorAll('.card');
-                cards.forEach(card => {
-                    card.classList.add('stagger-item');
+            if (heroTitle) heroTitle.classList.add('slide-in-down');
+            if (heroSubtitle) heroSubtitle.classList.add('slide-in-up', 'stagger-1');
+            if (heroImage) heroImage.classList.add('scale-in', 'stagger-2');
+            if (heroQuote) heroQuote.classList.add('slide-in-up', 'stagger-3');
+            if (heroButton) heroButton.classList.add('fade-in', 'stagger-4');
+        }
+
+        // Risk factors section
+        const riskFactorsSection = document.querySelector('#risk-factors');
+        if (riskFactorsSection) {
+            const riskTitle = riskFactorsSection.querySelector('h2');
+            const riskLead = riskFactorsSection.querySelector('.lead');
+            const riskImage = riskFactorsSection.querySelector('img');
+            const riskTabs = riskFactorsSection.querySelector('.tabs-container');
+            
+            if (riskTitle) riskTitle.classList.add('fade-in');
+            if (riskLead) riskLead.classList.add('fade-in', 'stagger-1');
+            if (riskImage) riskImage.classList.add('scale-in', 'stagger-2');
+            if (riskTabs) {
+                riskTabs.classList.add('slide-in-up', 'stagger-3');
+                const tabButtons = riskTabs.querySelectorAll('.tab-button');
+                const tabContents = riskTabs.querySelectorAll('.tab-content');
+                
+                tabButtons.forEach((button, index) => {
+                    button.classList.add('stagger-item');
+                });
+                
+                tabContents.forEach((content, index) => {
+                    content.classList.add('stagger-item');
                 });
             }
         }
 
-        // Age guide section
-        const ageGuide = document.querySelector('#age-guide');
-        if (ageGuide) {
-            const ageTitle = ageGuide.querySelector('h2');
-            const ageLead = ageGuide.querySelector('.lead');
-            const ageGrid = ageGuide.querySelector('.grid');
+        // Breast screening section
+        const screeningSection = document.querySelector('#breast-screening');
+        if (screeningSection) {
+            const screeningTitle = screeningSection.querySelector('h2');
+            const screeningLead = screeningSection.querySelector('.lead');
+            const screeningImage = screeningSection.querySelector('img');
+            const screeningCard = screeningSection.querySelector('.card');
             
-            if (ageTitle) ageTitle.classList.add('fade-in');
-            if (ageLead) ageLead.classList.add('fade-in');
-            if (ageGrid) {
-                ageGrid.classList.add('stagger-container');
-                const cards = ageGrid.querySelectorAll('.card');
-                cards.forEach(card => {
-                    card.classList.add('stagger-item');
+            if (screeningTitle) screeningTitle.classList.add('fade-in');
+            if (screeningLead) screeningLead.classList.add('fade-in', 'stagger-1');
+            if (screeningImage) screeningImage.classList.add('scale-in', 'stagger-2');
+            if (screeningCard) {
+                screeningCard.classList.add('slide-in-up', 'stagger-3');
+                const benefits = screeningCard.querySelectorAll('.grid > div');
+                benefits.forEach((benefit, index) => {
+                    benefit.classList.add('stagger-item');
                 });
             }
         }
 
-        // Prevention tips section
-        const preventionSection = document.querySelector('#prevention-title')?.closest('section');
-        if (preventionSection) {
-            const preventionTitle = preventionSection.querySelector('h2');
-            const preventionLead = preventionSection.querySelector('.lead');
-            const preventionGrid = preventionSection.querySelector('.grid');
+        // Screening recommendations section
+        const recommendationsSection = document.querySelector('#screening-recommendations');
+        if (recommendationsSection) {
+            const recTitle = recommendationsSection.querySelector('h2');
+            const recLead = recommendationsSection.querySelector('.lead');
+            const recImage = recommendationsSection.querySelector('img');
+            const recTabs = recommendationsSection.querySelector('.tabs-container');
             
-            if (preventionTitle) preventionTitle.classList.add('fade-in');
-            if (preventionLead) preventionLead.classList.add('fade-in');
-            if (preventionGrid) {
-                preventionGrid.classList.add('stagger-container');
-                const cards = preventionGrid.querySelectorAll('.card');
-                cards.forEach(card => {
-                    card.classList.add('stagger-item');
+            if (recTitle) recTitle.classList.add('fade-in');
+            if (recLead) recLead.classList.add('fade-in', 'stagger-1');
+            if (recImage) recImage.classList.add('scale-in', 'stagger-2');
+            if (recTabs) {
+                recTabs.classList.add('slide-in-up', 'stagger-3');
+                const tabButtons = recTabs.querySelectorAll('.tab-button');
+                const tabContents = recTabs.querySelectorAll('.tab-content');
+                
+                tabButtons.forEach((button, index) => {
+                    button.classList.add('stagger-item');
+                });
+                
+                tabContents.forEach((content, index) => {
+                    content.classList.add('stagger-item');
                 });
             }
         }
 
-        // FAQ section
-        const faqSection = document.querySelector('#faq-title')?.closest('section');
-        if (faqSection) {
-            const faqTitle = faqSection.querySelector('h2');
-            const faqContainer = faqSection.querySelector('.faq-container');
+        // Signs and symptoms section
+        const signsSection = document.querySelector('#signs-symptoms');
+        if (signsSection) {
+            const signsTitle = signsSection.querySelector('h2');
+            const signsLead = signsSection.querySelector('.lead');
+            const signsImage = signsSection.querySelector('img');
+            const signsCard = signsSection.querySelector('.card');
+            const signsForm = signsSection.querySelector('form');
             
-            if (faqTitle) faqTitle.classList.add('fade-in');
-            if (faqContainer) {
-                faqContainer.classList.add('stagger-container');
-                const faqItems = faqContainer.querySelectorAll('.faq-item');
-                faqItems.forEach(item => {
-                    item.classList.add('stagger-item');
+            if (signsTitle) signsTitle.classList.add('fade-in');
+            if (signsLead) signsLead.classList.add('fade-in', 'stagger-1');
+            if (signsImage) signsImage.classList.add('scale-in', 'stagger-2');
+            if (signsCard) {
+                signsCard.classList.add('slide-in-up', 'stagger-3');
+                const symptoms = signsCard.querySelectorAll('.grid > div');
+                symptoms.forEach((symptom, index) => {
+                    symptom.classList.add('stagger-item');
                 });
             }
+            if (signsForm) signsForm.classList.add('fade-in', 'stagger-4');
         }
 
-        // Myth vs Fact section
-        const mythFactSection = document.querySelector('#myth-fact-title')?.closest('section');
-        if (mythFactSection) {
-            const mythFactTitle = mythFactSection.querySelector('h2');
-            const mythFactLead = mythFactSection.querySelector('.lead');
-            const mythFactContainer = mythFactSection.querySelector('.myth-fact-container');
+        // MyHealthScore section
+        const myHealthScoreSection = document.querySelector('#genetics-title')?.closest('section');
+        if (myHealthScoreSection) {
+            const healthTitle = myHealthScoreSection.querySelector('h2');
+            const healthContent = myHealthScoreSection.querySelector('p');
+            const healthButtons = myHealthScoreSection.querySelectorAll('.btn');
             
-            if (mythFactTitle) mythFactTitle.classList.add('fade-in');
-            if (mythFactLead) mythFactLead.classList.add('fade-in');
-            if (mythFactContainer) {
-                mythFactContainer.classList.add('stagger-container');
-                const cards = mythFactContainer.querySelectorAll('.myth-card, .fact-card');
-                cards.forEach(card => {
-                    card.classList.add('stagger-item');
-                });
-            }
+            if (healthTitle) healthTitle.classList.add('fade-in');
+            if (healthContent) healthContent.classList.add('fade-in', 'stagger-1');
+            healthButtons.forEach((button, index) => {
+                button.classList.add('stagger-item');
+            });
         }
 
-        // Add floating animation to ribbons
-        const ribbons = document.querySelectorAll('.fa-solid.fa-ribbon');
-        ribbons.forEach(ribbon => {
-            ribbon.classList.add('floating');
+        // Add floating animation to decorative elements
+        const floatingElements = document.querySelectorAll('.fa-solid.fa-heart, .fa-solid.fa-shield-heart, .fa-solid.fa-stethoscope');
+        floatingElements.forEach(element => {
+            element.classList.add('floating');
         });
 
         // Add pulse animation to buttons
@@ -234,9 +321,18 @@
             button.classList.add('pulse-on-scroll');
         });
 
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.classList.add('card');
+        });
+
         // Observe all animated elements
-        const animatedElements = document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in, .stagger-container');
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .scale-in, .stagger-container, .stagger-item');
         animatedElements.forEach(el => observer.observe(el));
+        
+        console.log(`Total animated elements: ${animatedElements.length}`);
+        console.log('Animations initialized successfully!');
     }
 
     // Smooth scroll for anchor links
