@@ -1,102 +1,28 @@
-# Pr. Georges Abi Tayeh - Breast Cancer Awareness Portal
+# Pr. Georges Abi Tayeh - Breast Health Guide
 
-A comprehensive breast cancer awareness and education portal featuring evidence-based information, screening guidelines, and genetic testing resources.
+Patient-facing website for Pr. Georges Abi Tayeh, Breast Health Specialist and Preventive Care Expert. Provides breast health information, screening guidelines, genetic testing resources, and a WhatsApp link to book a consultation.
 
-## Features
+Live at https://prgeorgesabitayeh.vercel.app
 
-- **Multi-language Support**: English, Arabic, and French
-- **Responsive Design**: Mobile-first approach with modern UI
-- **Evidence-Based Content**: Information from ACS, USPSTF, WCRF, NHS, and WHO
-- **Interactive Elements**: FAQ sections, age-based screening guides
-- **WhatsApp Integration**: Direct consultation booking
-- **Analytics**: Google Analytics and Meta Pixel tracking
+## What it is
 
-## Technology Stack
+A single-page static website. All content lives in `index.html` with supporting styles, scripts, and images under `assets/`. Content is available in English, Arabic, and French.
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Styling**: Custom CSS with CSS Grid and Flexbox
-- **Icons**: Font Awesome 6.5.0
-- **Fonts**: Google Fonts (Quicksand)
-- **Deployment**: Vercel
+## Stack
 
-## Project Structure
+Plain HTML, CSS, and vanilla JavaScript. No build step. Deployed on Vercel.
 
-```
-├── index.html              # Main page
-├── assets/
-│   ├── css/
-│   │   └── breastcancer.css # Main stylesheet
-│   ├── js/
-│   │   ├── analytics.js     # Google Analytics & Meta Pixel
-│   │   ├── translations.js  # Multi-language support
-│   │   └── breastcancer.js  # Main functionality
-│   └── images/
-│       └── breastcancer/    # Image assets
-├── vercel.json             # Vercel configuration
-├── package.json            # Project metadata
-└── README.md              # This file
-```
+## Running locally
 
-## Deployment
+Open `index.html` directly in a browser, or run `vercel dev` from the project root if the Vercel CLI is installed.
 
-This project is configured for deployment on Vercel:
+## Deploying
 
-1. **Install Vercel CLI** (if not already installed):
-   ```bash
-   npm i -g vercel
-   ```
+Run `vercel --prod` to push to production. The Vercel project is linked via the `.vercel/` folder.
 
-2. **Deploy to Vercel**:
-   ```bash
-   vercel --prod
-   ```
+## Files
 
-3. **Or connect your GitHub repository** to Vercel for automatic deployments.
-
-## Local Development
-
-To run locally:
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-## Content Sections
-
-- **Hero Section**: Main call-to-action with awareness messaging
-- **Clinical Support**: Doctor information and credentials
-- **Age-Based Guidelines**: Evidence-based screening recommendations
-- **Prevention Tips**: Lifestyle modifications and risk reduction
-- **Warning Signs**: When to seek immediate care
-- **Imaging Partners**: Partner centers for mammography booking
-- **Genetic Testing**: Information about BRCA and PRS testing
-- **FAQ**: Common questions and evidence-based answers
-- **Myth vs Fact**: Debunking common misconceptions
-
-## Analytics
-
-The site includes:
-- Google Analytics (GA4) tracking
-- Meta Pixel for Facebook advertising
-- WhatsApp click tracking
-- Share button analytics
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## License
-
-MIT License - See LICENSE file for details.
-
-## Contact
-
-For questions about this portal, contact Dr. Mary Chammas through the WhatsApp integration on the site.
+- `index.html` is the full site
+- `assets/` contains CSS, JavaScript, and images
+- `vercel.json` is the hosting config
+- `package.json` holds project metadata
